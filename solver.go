@@ -46,7 +46,7 @@ const (
 	D
 )
 
-/* 递归穷举所有可能解，对每个解使用match判断是否复合每道题的逻辑描述 */
+/* 递归穷举所有可能解，对每个解使用match判断是否违反每道题的逻辑约束 */
 func solve(answer []int, n int, matchFunc []MatchFunc) {
 	for i := A; i <= D; i++ {
 		answer[n] = i
@@ -60,7 +60,7 @@ func solve(answer []int, n int, matchFunc []MatchFunc) {
 	}
 }
 
-/* 循环穷举所有可能解，对每个解使用match判断是否复合每道题的逻辑描述 */
+/* 循环穷举所有可能解，对每个解使用match判断是否违反每道题的逻辑约束 */
 func solve2(answer []int, matchFunc []MatchFunc) {
 	n := len(answer)
 	/* 每道题有4种选择：ABCD；一共n道题，所以一共有4的 n 次方种可能解 */
